@@ -1,0 +1,27 @@
+# Données
+data/
+*.csv
+*.pkl
+
+# Secrets
+.env
+.streamlit/secrets.toml
+
+# Modèles
+models/*.pkl
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Mac
+.DS_Store
