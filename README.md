@@ -1,4 +1,4 @@
-# World Cup 2026 — Match Prediction with Machine Learning
+# World Cup 2026 Match Prediction with Machine Learning
 
 > *Prédire les résultats des matchs de la Coupe du Monde 2026 grâce au Machine Learning*
 
@@ -16,7 +16,7 @@
 
 Ce projet répond à cette question en entraînant des modèles de Machine Learning sur **49 215 matchs internationaux** depuis 1872, avec une application dédiée à la CDM 2026 (48 équipes, 104 matchs).
 
-🔗 **Application en ligne :** [huggingface.co/spaces/RemiInce/fifa-wc-predict](https://huggingface.co/spaces/RemiInce/fifa-wc-predict)
+ **Application en ligne :** [huggingface.co/spaces/RemiInce/fifa-wc-predict](https://huggingface.co/spaces/RemiInce/fifa-wc-predict)
 
 ---
 
@@ -147,9 +147,9 @@ Streamlit (déploiement public)
 ## Équipe
 
 | | Nom | Rôle |
-|---|---|---|
-|  **Martial BAYOM** | Data Science & ML |
-|  **Rémi INCENGIERI** | Data Science & Déploiement |
+|---|---|
+|  **Martial BAYOM** | Data Science |
+|  **Rémi INCENGIERI** | Data Science |
 
 Projet réalisé dans le cadre du **certification Jedha AI School** (RNCP Niveau 6)
 
