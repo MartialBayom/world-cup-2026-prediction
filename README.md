@@ -1,4 +1,4 @@
-# 🏆 World Cup 2026 — Match Prediction with Machine Learning
+# 🏆 World Cup 2026 Match Prediction with Machine Learning
 
 > *Prédire les résultats des matchs de la Coupe du Monde 2026 grâce au Machine Learning*
 
@@ -93,7 +93,7 @@ world-cup-2026-prediction/
 
 ---
 
-## 📈 Analyse exploratoire — Insights clés
+## 📈 Analyse exploratoire - Insights clés
 
 - **58.5%** des matchs sont remportés par le favori FIFA → justifie l'intérêt du ML
 - **47%** d'upsets quand l'écart de rang est faible (0–10) vs **1%** quand il est > 100
