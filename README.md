@@ -1,4 +1,4 @@
-# World Cup 2026 Match Prediction with Machine Learning
+# World Cup 2026 — Match Prediction with Machine Learning
 
 > *Prédire les résultats des matchs de la Coupe du Monde 2026 grâce au Machine Learning*
 
@@ -26,7 +26,7 @@ Ce projet répond à cette question en entraînant des modèles de Machine Learn
 - Choisir 2 équipes parmi les 48 qualifiées pour la CDM 2026
 - Voir les statistiques comparées (rang FIFA, buts marqués/encaissés)
 - Obtenir la probabilité de victoire pour chaque équipe
-- Choisir le modèle ML utilisé (GradientBoosting, XGBoost, Random Forest, Logistic Regression)
+- Choisir le modèle ML (GradientBoosting, XGBoost, Random Forest, Logistic Regression)
 
 ### Simulation du tournoi
 - Simuler la CDM 2026 de A à Z (groupes → finale)
@@ -35,17 +35,17 @@ Ce projet répond à cette question en entraînant des modèles de Machine Learn
 
 ---
 
-## Résultats
+##  Résultats
 
 | Modèle | AUC-ROC | Accuracy |
 |---|---|---|
 | **GradientBoosting**  | **0.776** | **73%** |
 | Logistic Regression | 0.774 | 73% |
-| Random Forest | 0.755 | - |
-| XGBoost | 0.752 | - |
+| Random Forest | 0.755 | — |
+| XGBoost | 0.752 | — |
 
-> **Baseline sans ML** (toujours prédire le favori) : 58.5%
-> Notre modèle apporte **+14 points** de précision.
+> **Baseline sans ML** (toujours prédire le favori) : **58.5%**
+> Notre meilleur modèle apporte **+14 points** de précision.
 
 ---
 
@@ -54,19 +54,20 @@ Ce projet répond à cette question en entraînant des modèles de Machine Learn
 ```
 world-cup-2026-prediction/
 ├── app/
-│   └── streamlit_app.py       # Application Streamlit
+│   └── streamlit_app.py            # Application Streamlit
 ├── data/
-│   ├── results.csv            # 49 215 matchs internationaux (1872–2024)
-│   ├── goalscorers.csv        # Buteurs par match
-│   ├── shootouts.csv          # Tirs au but
-│   ├── former_names.csv       # Noms actualisés des pays
+│   ├── results.csv                 # 49 215 matchs internationaux (1872–2024)
+│   ├── goalscorers.csv             # Buteurs par match
+│   ├── shootouts.csv               # Tirs au but
+│   ├── former_names.csv            # Noms actualisés des pays
 │   └── fifa_ranking-2022-2026.csv  # Classement FIFA
-├── models/                    # Modèles entraînés (.pkl)
+├── models/                         # Modèles entraînés (.pkl / .joblib)
 ├── notebooks/
-│   ├── 01_data_preparation.ipynb  # Nettoyage & Feature Engineering
-│   ├── 03_eda.ipynb               # Analyse exploratoire
-│   └── 04_modeling_gb.ipynb       # Entraînement & évaluation
-├── .env.example               # Variables d'environnement (template)
+│   ├── 01_data_preparation.ipynb   # Nettoyage & préparation
+│   ├── 02_feature_engineering.ipynb # Construction des features
+│   ├── 03_eda.ipynb                # Analyse exploratoire
+│   └── 04_modeling.ipynb           # Entraînement & évaluation
+├── .env.example                    # Variables d'environnement (template)
 ├── .gitignore
 ├── README.md
 └── requirements.txt
@@ -79,21 +80,26 @@ world-cup-2026-prediction/
 | Feature | Description |
 |---|---|
 | `rank_dif` | Écart de classement FIFA entre les deux équipes |
-| `home_goals_avg` | Moyenne de buts marqués (5 derniers matchs) |
-| `away_goals_avg` | Moyenne de buts encaissés (5 derniers matchs) |
-| `home_form` | Forme récente de l'équipe 1 |
-| `away_form` | Forme récente de l'équipe 2 |
-| `elo_diff` | Différence de score Elo entre les deux équipes |
+| `goals_dif` | Différence de buts marqués (historique complet) |
+| `goals_dif_l5` | Différence de buts marqués (5 derniers matchs) |
+| `goals_suf_dif` | Différence de buts encaissés (historique complet) |
+| `goals_suf_dif_l5` | Différence de buts encaissés (5 derniers matchs) |
+| `goals_per_ranking_dif` | Buts pondérés par le classement FIFA |
+| `dif_rank_agst` | Qualité des adversaires affrontés (historique) |
+| `dif_rank_agst_l5` | Qualité des adversaires affrontés (5 derniers matchs) |
+| `dif_points_rank` | Différence de points FIFA pondérés par rang |
+| `dif_points_rank_l5` | Idem sur les 5 derniers matchs |
 | `is_friendly` | Match amical ou officiel |
 
 ---
 
-## Analyse exploratoire (EDA)
+## 📈 Analyse exploratoire — Insights clés
 
-- **58.5%** des matchs sont remportés par le favori FIFA
+- **58.5%** des matchs sont remportés par le favori FIFA → justifie l'intérêt du ML
 - **47%** d'upsets quand l'écart de rang est faible (0–10) vs **1%** quand il est > 100
 - Corrélation faible (r = 0.223) entre points FIFA et buts marqués → justifie l'Elo rating
-- Toutes les 48 équipes CDM 2026 sont représentées dans le dataset
+- Les matchs amicaux génèrent légèrement plus d'upsets (25%) que les matchs officiels (23%)
+- Toutes les **48 équipes CDM 2026** sont présentes dans le dataset (28 à 54 matchs chacune)
 
 ---
 
@@ -121,41 +127,41 @@ streamlit run app/streamlit_app.py
 
 ```
 Kaggle (données brutes)
-    ↓
+        ↓
 Amazon S3 (stockage)
-    ↓
-Feature Engineering (Elo rating, forme récente, stats FIFA)
-    ↓
-Machine Learning (4 modèles comparés)
-    ↓
+        ↓
+Feature Engineering (11 features : Elo, forme récente, stats FIFA)
+        ↓
+Machine Learning (4 modèles comparés via GridSearchCV)
+        ↓
 MLflow (tracking des expériences sur Hugging Face)
-    ↓
-Streamlit (déploiement public)
+        ↓
+Streamlit (déploiement public sur Hugging Face)
 ```
 
 ---
 
-## What's next ?
+## 🔭 What's next ?
 
-- [ ] **Forme récente pondérée** — les matchs récents pèsent plus
+- [ ] **Forme récente pondérée** — pondération exponentielle, les matchs récents pèsent plus
 - [ ] **Optuna AutoML** — optimisation automatique des hyperparamètres
 - [ ] **API FIFA Live** — données en temps réel avant chaque match
-- [ ] **Prédiction du score exact** — passer de classification à régression
+- [ ] **Prédiction du score exact** — passer de classification à régression (2-1, 1-0…)
 
 ---
 
-## Équipe
+## 👥 Équipe
 
 | | Nom | Rôle |
 |---|---|
 |  **Martial BAYOM** | Data Science |
 |  **Rémi INCENGIERI** | Data Science |
 
-Projet réalisé dans le cadre du **certification Jedha AI School** (RNCP Niveau 6)
+Projet réalisé dans le cadre de la **certification Jedha AI School** (RNCP Niveau 6)
 
 ---
 
-## Sources
+##  Sources
 
 | Dataset | Lien |
 |---|---|
