@@ -1,4 +1,4 @@
-# World Cup 2026 — Match Prediction with Machine Learning
+# 🏆 World Cup 2026 — Match Prediction with Machine Learning
 
 > *Prédire les résultats des matchs de la Coupe du Monde 2026 grâce au Machine Learning*
 
@@ -10,36 +10,36 @@
 
 ---
 
-## Objectif
+## 🎯 Objectif
 
 **Avant un match, quelle équipe a le plus de chances de gagner ?**
 
 Ce projet répond à cette question en entraînant des modèles de Machine Learning sur **49 215 matchs internationaux** depuis 1872, avec une application dédiée à la CDM 2026 (48 équipes, 104 matchs).
 
- **Application en ligne :** [huggingface.co/spaces/RemiInce/fifa-wc-predict](https://huggingface.co/spaces/RemiInce/fifa-wc-predict)
+🔗 **Application en ligne :** [huggingface.co/spaces/RemiInce/fifa-wc-predict](https://huggingface.co/spaces/RemiInce/fifa-wc-predict)
 
 ---
 
-## Fonctionnalités
+## ✨ Fonctionnalités
 
-### Prédicteur de match
+### 🔮 Prédicteur de match
 - Choisir 2 équipes parmi les 48 qualifiées pour la CDM 2026
 - Voir les statistiques comparées (rang FIFA, buts marqués/encaissés)
 - Obtenir la probabilité de victoire pour chaque équipe
 - Choisir le modèle ML (GradientBoosting, XGBoost, Random Forest, Logistic Regression)
 
-### Simulation du tournoi
+### 🏟️ Simulation du tournoi
 - Simuler la CDM 2026 de A à Z (groupes → finale)
 - Voir le parcours prédit de chaque équipe
 - Résultat selon notre modèle : **l'Espagne remporte la CDM 2026**
 
 ---
 
-##  Résultats
+## 📊 Résultats
 
 | Modèle | AUC-ROC | Accuracy |
 |---|---|---|
-| **GradientBoosting**  | **0.776** | **73%** |
+| **GradientBoosting** ⭐ | **0.776** | **73%** |
 | Logistic Regression | 0.774 | 73% |
 | Random Forest | 0.755 | — |
 | XGBoost | 0.752 | — |
@@ -49,7 +49,7 @@ Ce projet répond à cette question en entraînant des modèles de Machine Learn
 
 ---
 
-## Structure du projet
+## 🗂️ Structure du projet
 
 ```
 world-cup-2026-prediction/
@@ -75,7 +75,7 @@ world-cup-2026-prediction/
 
 ---
 
-## Features utilisées pour la prédiction
+## 🧠 Features utilisées pour la prédiction
 
 | Feature | Description |
 |---|---|
@@ -103,7 +103,7 @@ world-cup-2026-prediction/
 
 ---
 
-## Installation
+## ⚙️ Installation
 
 ```bash
 # Cloner le repo
@@ -123,7 +123,7 @@ streamlit run app/streamlit_app.py
 
 ---
 
-## Infrastructure
+## 🏗️ Infrastructure
 
 ```
 Kaggle (données brutes)
@@ -153,15 +153,15 @@ Streamlit (déploiement public sur Hugging Face)
 ## 👥 Équipe
 
 | | Nom | Rôle |
-|---|---|
-|  **Martial BAYOM** | Data Science |
-|  **Rémi INCENGIERI** | Data Science |
+|---|---|---|
+| 🧑‍💻 | **Martial BAYOM** | Data Science |
+| 🧑‍💻 | **Rémi INCENGIERI** | Data Science |
 
 Projet réalisé dans le cadre de la **certification Jedha AI School** (RNCP Niveau 6)
 
 ---
 
-##  Sources
+## 📂 Sources
 
 | Dataset | Lien |
 |---|---|
