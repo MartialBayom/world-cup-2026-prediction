@@ -20,3 +20,6 @@ mlartifacts/
 
 # Mac
 .DS_Store
+user_martial_accessKeys.csv
+user_martial_credentials.csv
+.env.backup

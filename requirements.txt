@@ -5,5 +5,7 @@ xgboost
 matplotlib
 seaborn
 streamlit
-requests
-beautifulsoup4
+mlflow
+boto3
+joblib
+python-dotenv
