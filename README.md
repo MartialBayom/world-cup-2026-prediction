@@ -2,7 +2,7 @@
 
 > *Prédire les résultats des matchs de la Coupe du Monde 2026 grâce au Machine Learning*
 
-[![Streamlit App](https://img.shields.io/badge/App-Streamlit-FF4B4B?logo=streamlit)](https://huggingface.co/spaces/RemiInce/fifa-wc-predict)
+[![Streamlit App](https://img.shields.io/badge/App-Streamlit-FF4B4B?logo=streamlit)](https://world-cup-2026-prediction-qqp5gzuqyxii3zxscdtv5t.streamlit.app)
 [![Python](https://img.shields.io/badge/Python-3.10-3776AB?logo=python)](https://www.python.org/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?logo=scikit-learn)](https://scikit-learn.org/)
 [![MLflow](https://img.shields.io/badge/MLflow-Tracking-0194E2)](https://mlflow.org/)
@@ -16,7 +16,7 @@
 
 Ce projet répond à cette question en entraînant des modèles de Machine Learning sur **49 215 matchs internationaux** depuis 1872, avec une application dédiée à la CDM 2026 (48 équipes, 104 matchs).
 
-🔗 **Application en ligne :** [huggingface.co/spaces/RemiInce/fifa-wc-predict](https://huggingface.co/spaces/RemiInce/fifa-wc-predict)
+🔗 **Application en ligne :** [world-cup-2026-prediction-qqp5gzuqyxii3zxscdtv5t.streamlit.app](https://world-cup-2026-prediction-qqp5gzuqyxii3zxscdtv5t.streamlit.app)
 
 ---
 
