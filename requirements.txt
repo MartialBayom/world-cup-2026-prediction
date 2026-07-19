@@ -9,3 +9,4 @@ mlflow
 boto3
 joblib
 python-dotenv
+plotly
