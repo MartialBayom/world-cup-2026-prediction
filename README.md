@@ -1,4 +1,4 @@
-# 🏆 World Cup 2026 Match Prediction with Machine Learning
+#  World Cup 2026 Match Prediction with Machine Learning
 
 > *Prédire les résultats des matchs de la Coupe du Monde 2026 grâce au Machine Learning*
 
@@ -10,7 +10,7 @@
 
 ---
 
-## 🎯 Objectif
+##  Objectif
 
 **Avant un match, quelle équipe a le plus de chances de gagner ?**
 
@@ -20,22 +20,22 @@ Ce projet répond à cette question en entraînant des modèles de Machine Learn
 
 ---
 
-## ✨ Fonctionnalités
+##  Fonctionnalités
 
-### 🔮 Prédicteur de match
+###  Prédicteur de match
 - Choisir 2 équipes parmi les 48 qualifiées pour la CDM 2026
 - Voir les statistiques comparées (rang FIFA, buts marqués/encaissés)
 - Obtenir la probabilité de victoire pour chaque équipe
 - Choisir le modèle ML (GradientBoosting, XGBoost, Random Forest, Logistic Regression)
 
-### 🏟️ Simulation du tournoi
+###  Simulation du tournoi
 - Simuler la CDM 2026 de A à Z (groupes → finale)
 - Voir le parcours prédit de chaque équipe
 - Résultat selon notre modèle : **l'Espagne remporte la CDM 2026**
 
 ---
 
-## 📊 Résultats
+##  Résultats
 
 | Modèle | AUC-ROC | Accuracy |
 |---|---|---|
@@ -49,7 +49,7 @@ Ce projet répond à cette question en entraînant des modèles de Machine Learn
 
 ---
 
-## 🗂️ Structure du projet
+##  Structure du projet
 
 ```
 world-cup-2026-prediction/
@@ -75,7 +75,7 @@ world-cup-2026-prediction/
 
 ---
 
-## 🧠 Features utilisées pour la prédiction
+##  Features utilisées pour la prédiction
 
 | Feature | Description |
 |---|---|
@@ -93,7 +93,7 @@ world-cup-2026-prediction/
 
 ---
 
-## 📈 Analyse exploratoire - Insights clés
+##  Analyse exploratoire - Insights clés
 
 - **58.5%** des matchs sont remportés par le favori FIFA → justifie l'intérêt du ML
 - **47%** d'upsets quand l'écart de rang est faible (0–10) vs **1%** quand il est > 100
@@ -103,7 +103,7 @@ world-cup-2026-prediction/
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ```bash
 # Cloner le repo
@@ -123,7 +123,7 @@ streamlit run app/streamlit_app.py
 
 ---
 
-## 🏗️ Infrastructure
+##  Infrastructure
 
 ```
 Kaggle (données brutes)
@@ -141,7 +141,7 @@ Streamlit (déploiement public sur Hugging Face)
 
 ---
 
-## 🔭 What's next ?
+##  What's next ?
 
 - [ ] **Forme récente pondérée** — pondération exponentielle, les matchs récents pèsent plus
 - [ ] **Optuna AutoML** — optimisation automatique des hyperparamètres
@@ -155,7 +155,6 @@ Streamlit (déploiement public sur Hugging Face)
 | | Nom | Rôle |
 |---|---|---|
 | 🧑‍💻 | **Martial BAYOM** | Data Science |
-| 🧑‍💻 | **Rémi INCENGIERI** | Data Science |
 
 Projet réalisé dans le cadre de la **certification Jedha AI School** (RNCP Niveau 6)
 
